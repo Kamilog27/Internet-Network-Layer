@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Internet Network Layer</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script>
+      window.onload=function(){
+        let res=document.getElementById("enlace5");
+        let li=document.getElementById("lista5");
+        res.style.background="white";
+        res.style.color="black";
+        li.style.background="white";
+      }
+    </script>
+    <header>
+      
+          <img src="https://www.eltiempo.com/uploads/2017/03/31/58de8912899ef.jpeg" alt="cerebro">
+          <h1>Internet Network Layer</h1>
+
+    </header>
+    <div class="container">
+      <div class="row justify-content-between">
+        <article class="col-12 col-md-8">
+          <h4>Multiprotocol Label Switching</h4>
+          <img class="image" style="height:400px;" src="img/conmutacion.jpg" alt="ipv4">
+          <p>Multiprotocol Label Switching or MPLS (Multiprotocol Label Switching) is a standard data 
+              transport mechanism created by the IETF and defined in RFC 3031. It operates between the 
+              data link layer and the network layer of the OSI model. . It was designed to unify the 
+              data transport service for circuit-based and packet-based networks. It can be used to 
+              carry different types of traffic, including voice and IP packet traffic.MPLS replaced 
+              Frame Relay and ATM as the technology of choice for carrying high-speed data and digital 
+              voice on a single connection. MPLS not only provides greater reliability and performance,
+               it can often reduce transportation costs through increased network efficiency. 
+               Its ability to prioritize packets carrying voice traffic makes it the perfect solution 
+               for carrying voice over IP or VoIP calls.
+           </p>
+           <h3>MPLS (Multiprotocol Label Switching)</h3>
+           <p>
+            Virtual circuits in IP networks, on which it introduces a series of improvements:
+            <ol>
+                <li>Virtual private networks.</li>
+                <li>Traffic engineering.</li>
+                <li>Failure protection mechanisms and more.</li>
+                <li>Quality of Service (QoS) Support</li>
+                <li>Multiprotocol support</li>
+                <li>Establishment of Classes of Service (CoS).</li>
+            </ol>
+           </p>
+
+           <h3>Basic characteristics and operation</h3>
+           <p>
+            MPLS technology is a solution for multiprotocol switching: <br>
+            
+            <ol>
+                <li>It introduces a connection-oriented structure in networks that were not originally connection-oriented (IP networks).</li>
+                <li>It seamlessly integrates layer 2 (data link) and layer 3 (network) of the OSI model, combining routing control functions with effective switching</li>
+                <li>Optimizes routing, notably reducing algorithm complexity.</li>
+                <li>Maintains a state of communication between two nodes.</li>
+                <li>It allows to introduce QoS in IP networks.</li>
+                <li>Optimize the establishment of tunnels in VPNs.</li>
+                
+            </ol>
+            
+            </p>
+             
+             <h3>MPLS architecture</h3>
+             <p> 
+                <em>Elements</em> <br>
+                <ol>
+                    <li>LER (Label Edge Router or labeling border router): element that starts or ends the tunnel (extracts and introduces headers). That is, the input / output element to the MPLS network. There are both incoming and outgoing routers on the network. Both are often referred to as a border router since they are located at the ends of the MPLS network.</li>
+                    <li>LSR (Label Switching Router or label switching router)</li>
+                    <li>LSP (Label Switched Path or route exchange by label) generic name of an MPLS path (for certain traffic or FEC), that is, of the MPLS tunnel established between the ends. Note that an LSP is unidirectional.</li>
+                    <li>LDP - Label Distribution Protocol - A protocol for distributing MPLS labels between computers on the network</li>
+                    <li>FEC (Forwarding Equivalence Class): name given to traffic that is routed under a label. Subset of packets treated in the same way by the switch.</li>
+                </ol>
+            </p>
+               <h3>MPLS header</h3>
+               <p>
+                   <img src="img/cabecerampls.png" alt="cabecera mpls"> <br>
+                   <em>Where:</em>
+                   <ol>
+                       <li>Label or label (20 bits): is the value of the MPLS label.</li>
+                       <li>Experimental or Exp (3 bits): also called experimental bits. It appears as quality of service in other texts, and affects packet queuing and discarding. They are three bits used to identify the class of service.</li>
+                       <li>Stack or stack (S, 1 bit): used for hierarchical stacking of labels. When S = 0, it indicates that there are more labels added to the package. When S = 1, it is the last label in the hierarchy.</li>
+                       <li>Time to live or time-to-live (TTL, 8 bits), which has the same functionality as in IP. It is decremented in each router and when reaching the value of 0, the packet is discarded. Usually replaces the TTL field in the IP header.</li>
+
+                   </ol>
+               </p>
+               <h3>MPLS Label Stack</h3>
+               <img src="img/pilampls.png" alt="pilampls">
+               <p>
+                MPLS works by appending a header to each packet. Said header contains one or more "tags",
+                and the set of labels is called a stack or "stack". Each tag consists of four fields:
+                <ol>
+                    <li>20-bit tag value.</li>
+                    <li>3-bit Quality of Service (QoS) priority. Also called experimental bits.</li>
+                    <li>The "bottom" flag of the 1-bit stack.</li>
+                    <li>8-bit Time to Live (TTL).</li>
+                </ol>
+               </p>
+              
+        </article>
+        <aside class="col-12 col-md-3">
+          <h3>Themes</h3>
+          <ul>
+            <li id="lista1"> <a id="enlace1" href="index.html">IPv4</a></li>
+              <li id="lista2"> <a id="enlace2" href="ipadress.html"> IP adress</a></li>
+              <li id="lista3"> <a id="enlace3" href="ipv6.html">IPv6</a></li>
+              <li id="lista4"> <a id="enlace4" href="controlprotocol.html">Control Protocol/Internet Protocol</a></li>
+              <li id="lista5"> <a id="enlace5" href="conmutacionympls.html">Label and MPLS switching</a></li>
+              <li id="lista6"> <a id="enlace6" href="protocolodeenrutamiento.html">Enhanced Interior Gateway Routing Protocol</a></li>
+              <li id="lista7"> <a id="enlace7" href="puertaenlaceexterior.html">BGP: the Exterior Gateway routing protocol</a></li>
+              <li id="lista8"> <a id="enlace8" href="multidifusionip.html">IP multicast</a></li>
+              <li id="lista9"> <a id="enlace9" href="ipmovil.html">Mobile IP</a></li>
+          </ul>
+
+        </aside>
+      </div>
+    </div>
+    <footer >
+      <p> &copy; Desarrollado por Juan Camilo García </p>
+    </footer>
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  </body>
+</html>

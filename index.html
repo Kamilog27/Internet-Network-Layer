@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Internet Network Layer</title>
+    <link rel="stylesheet" href="style.css">
+    
+  </head>
+  <body>
+    <script>
+      window.onload=function(){
+        let res=document.getElementById("enlace1");
+        let li=document.getElementById("lista1");
+        res.style.background="white";
+        res.style.color="black";
+        li.style.background="white";
+      }
+    </script>
+    <header>
+          <img src="https://www.eltiempo.com/uploads/2017/03/31/58de8912899ef.jpeg" alt="cerebro">
+          <h1>Internet Network Layer</h1>
+    </header>
+    <div class="container">
+      <div class="row justify-content-between">
+        <article class="col-12 col-md-8">
+          <h4>IPv4</h4>
+          <img class="image"src="img/ipv4.jpg" alt="ipv4">
+          <p>Internet Protocol version 4
+            It is the fourth version of the Internet Protocol (IP), an Internet-based networking protocol,
+            and it was the first version implemented in 1983 for the production of ARPANET. IPv4 uses 32-bit addresses,
+            limited to 2^32 = 4,294,967,296 unique addresses, many (LAN). Due to the enormous growth that all this has had
+            of electronic security and automation combined with the fact that Since there is a waste of addresses in many cases,
+             it was observed several years ago that IPv4 addresses were scarce.
+            This limitation helped stimulate the study on the feasibility of implementing a new IPv6 protocol, which in 2016 is already
+             in the early stages of testing, and which is expected to end up replacing the current IPv4 protocol.
+           </p>
+           <h3>Addressing</h3>
+           <p>IPv4 uses 32-bit addresses that limit the address space to 4,294,967,296 (2^32) possible addresses.
+             IPv4 (Internet Protocol version 4) reserves special address blocks for private networks
+             (in total 16 777 216 addresses, that is, (2^24), as well as multicast addresses (268 435 456 addresses, that is, 2^28).
+           </p>
+
+           <h3>Address representations</h3>
+           <p>IPv4 addresses can be represented in any notation that expresses a 32-bit integer 
+             value. Most of the time they are written in decimal notation, which consists of four 
+             octets of the address expressed individually in decimal numbers, and separated one 
+             from the next by periods</p>
+             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Ipv4_address.svg/300px-Ipv4_address.svg.png" alt="adress">
+             <h3>Assignment</h3>
+             <p>In the original design of IPv4, an IP address was divided into two parts: the network identifier was the 
+               most significant octet of the address, and the host identifier (host or guest) was the rest of the address. 
+               The latter was also called the resting field. This structure allowed a maximum of 256 network identifiers, 
+               which were quickly found to be inappropriate.
+              To overcome this limit, the most significant address octet was redefined in 1981 to create network classes, in a system that later became known as classful networks. The revised system defined five classes. Classes A, B, and C had different bit lengths for network identification. The rest of the address was used as before to identify a host within a network. Due to the different sizes of fields in different classes, each network class had a different ability to address its hosts. In addition to the three classes for addressing hosts, Class D was defined for multicast addressing, and Class E was reserved for future applications.</p>
+              <h3>Fragmentation and reassembly</h3>
+              <p>The Internet Protocol (IP) allows networks to communicate with each other. The design accommodates 
+                networks of diverse physical natures; it is independent of the technology used in the layer immediately 
+                below, the Link Layer. Networks with different hardware usually differ not only in transmission speed, 
+                but also in their Maximum Transmission Unit (MTU). When a network wants to transmit datagrams to a network with 
+                a lower MTU, it must fragment its datagrams. In IPv4, this function is performed in the Internet layer, 
+                and it is carried out in IPv4 routers, which only require this layer as the highest implemented in their design.
+                In contrast, IPv6, the new generation of Internet Protocol, does not allow routers to carry out such
+               fragmentation; it is the hosts that determine the MTU before sending datagrams.</p>
+               <h3>Fragmentation</h3>
+               <p>When a router receives a packet, it examines the destination address and determines the exit 
+                 interface to use and its MTU. If the packet size is greater than the MTU and the No Fragmentation 
+                 (DF) bit is 0 in the packet header, the router will have to fragment the packet.
+                The router splits the packet into chunks. The maximum size of each fragment is the MTU minus the 
+                size of the IP header (between 20 and 60 bytes). The router puts each fragment inside its packet.
+                These fragments receive the following changes:</p>
+                <ol>
+                  <li>The total size field is the chunk size.</li>
+                  <li>The more fragments (MF) flag is equal to 1 in all packets except the last one.</li>
+                  <li>The fragment offset field is on, based on the fragment offset in the original data load. It is measured in units of 8-byte blocks.</li>
+                  <li>The header checksum field is recomputed.</li>
+                </ol>
+              <h3>Address representation</h3>
+              <p>IPv4 addresses can be written to express a 32-bit integer, but are typically written with decimal
+                 places separated by periods. These 3-digit decimal numbers are called "octets", because in binary 
+                 they require 8 digits (8 bits) to be represented. The following table shows various forms of IPv4 
+                 address representation:
+                 <table>
+                   <tr>
+                     <th>Notation</th>
+                     <th>Value</th>
+                     <th>Conversion</th>                     
+                   </tr>
+                   <tr>
+                     <td>Decimal separated by points</td>
+                     <td>192.0.2.235</td>
+                     <td>-</td>
+                   </tr>
+                   <tr>
+                     <td>Hexadecimal separated by dots</td>
+                     <td>0xC0.0x00.0x02.0xEB</td>
+                     <td>Each octet is individually converted to hexadecimal form</td>
+                   </tr>
+                   <tr>
+                     <td>Octal separated by dots</td>
+                     <td>0301.1680.0002.0353</td>
+                     <td>Each octet is individually converted to octal</td>
+                   </tr>
+                   <tr>
+                     <td>Hexadecimal</td>
+                     <td>0xC00002EB</td>
+                     <td>Concatenation of octets of the dot-separated hexadecimal form</td>
+                   </tr>
+                   <tr>
+                     <td>Decimal</td>
+                     <td>3221226219</td>
+                     <td>The hexadecimal number expressed in decimal</td>
+                   </tr>
+                   <tr>
+                     <td>Octal</td>
+                     <td>030000001353</td>
+                     <td>The hexadecimal number expressed in octal</td>
+                   </tr>
+                 </table>
+                </p>
+        </article>
+        <aside class="col-12 col-md-3">
+          <h3>Themes</h3>
+          <ul>
+            <li id="lista1"> <a id="enlace1" href="index.html">IPv4</a></li>
+            <li id="lista2"> <a id="enlace2" href="ipadress.html"> IP adress</a></li>
+            <li id="lista3"> <a id="enlace3" href="ipv6.html">IPv6</a></li>
+            <li id="lista4"> <a id="enlace4" href="controlprotocol.html">Control Protocol/Internet Protocol</a></li>
+            <li id="lista5"> <a id="enlace5" href="conmutacionympls.html">Label and MPLS switching</a></li>
+            <li id="lista6"> <a id="enlace6" href="protocolodeenrutamiento.html">Enhanced Interior Gateway Routing Protocol</a></li>
+            <li id="lista7"> <a id="enlace7" href="puertaenlaceexterior.html">BGP: the Exterior Gateway routing protocol</a></li>
+            <li id="lista8"> <a id="enlace8" href="multidifusionip.html">IP multicast</a></li>
+            <li id="lista9"> <a id="enlace9" href="ipmovil.html">Mobile IP</a></li>
+          </ul>
+
+        </aside>
+      </div>
+    </div>
+    <footer >
+      <p> &copy; Desarrollado por Juan Camilo García </p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  </body>
+</html>

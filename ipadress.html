@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Internet Network Layer</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script>
+     window.onload=function(){
+        let res=document.getElementById("enlace2");
+        let li=document.getElementById("lista2");
+        res.style.background="white";
+        res.style.color="black";
+        li.style.background="white";
+      }
+    </script>
+    <header>
+      
+          <img src="https://www.eltiempo.com/uploads/2017/03/31/58de8912899ef.jpeg" alt="cerebro">
+          <h1>Internet Network Layer</h1>
+   </header>
+    <div class="container">
+      <div class="row justify-content-between">
+        <article class="col-12 col-md-8">
+          <h4>IP Adress</h4>
+          <img class="image"src="img/ipadress.png" alt="ipv4">
+          <p>The IP address is a set of numbers that identifies, in a logical and hierarchical way, 
+            an interface on the network (communication / connection element) of a device (computer, laptop,
+             smartphone) that uses the protocol (Internet Protocol) or , which corresponds to the network level 
+             of the TCP / IP model.1 The IP address should not be confused with the MAC address, which is a 
+             48-bit identifier expressed in hexadecimal code, to uniquely identify the network card and does 
+             not depend of the connection protocol used in the network.
+           </p>
+           <h3>Lessons</h3>
+           <p>
+            Class A: 0.0.0.0 a 127.255.255.255  – Mask /8 Used by large private networks, such as a multinational.Reservado 0.0.0.0/8 (de 0.0.0.0 a 0.255.255.255)
+            Reservado 127.0.0.0/8 (de 127.0.0.0 a 127.255.255.255) <br>
+            Class B: 128.0.0.0 a 191.255.255.255 – Mask /16 Used by medium-sized networks, such as an SME or a study center. <br>
+            Class C: 192.0.0.0 a 223.255.255.255 – Mask /24 Used by medium-sized networks, such as home. <br>
+            Class D: 224.0.0.0 a 239.255.255.255 <br>
+            Class E:  240.0.0.0 a 255.255.255.255
+           </p>
+
+           <h3>Private addresses</h3>
+           <p>There are certain addresses in each class of IP address that are not assigned and are called 
+             private addresses. Private addresses can be used by hosts that use Network Address Translation 
+             (NAT) to connect to a public network or by hosts that do not connect to the Internet. Three 
+             non-overlapping ranges of IPv4 addresses are reserved for private networks.10 There cannot be two 
+             identical addresses in the same network, but they can be repeated in two private networks that do 
+             not have a direct connection to each other or that connect through a third party to do NAT.
+           </p>
+             <img src="img/privateadress.png" alt="adress">
+             <h3>Net mask</h3>
+             <p>
+              The network mask allows distinguishing within the IP address, the bits that identify the 
+              network and the bits that identify the host. In an IP version 4 address, of the 32 bits that 
+              re had in total, they are defined by default for a class A address, that the first eight (8) 
+              bits are for the network and the remaining 24 for the host, in an address of class B, the first
+               16 bits are the network part and the host part is the next 16, and for a class C address, 
+               the first 24 bits are the network part and the remaining eight (8) are the host part . 
+               For example, from the class A address 10.2.1.2 we know that it belongs to the 10.0.0.0 
+               network and the host or host it refers to is 2.1.2 within it.
+              The mask is formed by setting the bits that identify the network to 1 and the bits that
+               identify the host to 0.12 In this way, a class A address will have a default mask of 255.0.0.0, one of class B 255.255.0.0 and a class C 255.255.255.0: network devices perform an AND between the IP address and the network mask to obtain the network address to which the host identified by the given IP address belongs. For example:
+              IP address: 196.5.4.44 <br>
+              Netmask (default): 255.255.255.0 <br>
+              AND (in binary): <br> 11000100.00000101.00000100.00101100 (196.5.4.44) IP address
+              11111111.11111111.11111111.00000000 (255.255.255.0) Netmask
+              11000100.00000101.00000100.00000000 (196.5.4.0) DNA result
+             </p>
+              <h3>Create subnets</h3>
+              <p>The address space of a network can in turn be subdivided by creating separate autonomous subnets.
+                 An example of use is when we need to group all the employees belonging to a department of a company. 
+                 In this case we would create a subnet that encompasses their IP addresses. To achieve this, it is 
+                 necessary to reserve bits of the host field to identify the subnet by setting the network-subnet 
+                 bits in the mask to one. For example, the address 173.17.1.1 with mask 255.255.255.0 indicates 
+                 that the first two octets identify the network (since it is a class B address), the third octet 
+                 identifies the subnet (1 bits in the mask) and the fourth identifies the host 
+                 (0 corresponding bits within the mask). There are two addresses of each subnet that are reserved: 
+                 the one that identifies the subnet (host field at 0) and the address to broadcast in the subnet 
+                 (all the bits of the host field at 1).Networks can be divided into smaller networks to make 
+                 better use of the IP addresses available to hosts, as these are sometimes wasted when subnets 
+                 are created with a single subnet mask.Subnetting allows the network administrator to contain 
+                 broadcasts that are generated within a LAN, resulting in better bandwidth performance.</p>
+               <h3>Dynamic IP</h3>
+               <p>
+                 A dynamic IP address is an IP assigned to the user, through a DHCP (Dynamic Host Configuration Protocol)
+                 server. The IP obtained has a specified maximum duration. The DHCP server provides specific configuration
+                 parameters for each client that wishes to participate in the IP network. Among these parameters is the 
+                 IP address of the client. <br> Advantage:
+              </p>
+              
+                <ol>
+                  <li>Reduces operating costs for Internet Service Providers (ISP).</li>
+                  <li>Reduces the number of IPs assigned (fixedly) idle.</li>
+                  <li>The user can restart the modem or router to be assigned another IP and thus avoid the restrictions that many websites put on their free online multimedia downloading or viewing services.</li>
+                  
+                </ol>
+              <h3>IP address assignment</h3>
+              <p>Depending on the specific implementation, the DHCP server has three methods for assigning IP addresses:
+              <ol>
+                <li>
+                 <em>Manually</em>, when the server has at its disposal a table that matches MAC addresses with IP 
+                 addresses, created manually by the network administrator. Only clients with a valid MAC address 
+                 will receive an IP address from the server.
+                </li>
+                <li>
+                  <em>Automatically</em>, where the DHCP server assigns for a pre-established time already by the 
+                  administrator a free IP address, taken from an interval also pre-set by the administrator, to any 
+                  client that requests one.
+                </li>
+                <li>
+                  <em>Dynamically</em>, the only method that allows IP address reuse. The network administrator assigns
+                   an IP address range for DHCP, and each client computer on the LAN has its TCP / IP communication 
+                   software configured to request an IP address from the DHCP server when its network interface card 
+                   starts up. The process is transparent to the user and has a limited validity period.
+                </li>
+              </ol>  
+              </p>
+        </article>
+        <aside class="col-12 col-md-3">
+          <h3>Themes</h3>
+          <ul>
+            
+              <li id="lista1"> <a id="enlace1" href="index.html">IPv4</a></li>
+              <li id="lista2"> <a id="enlace2" href="ipadress.html"> IP adress</a></li>
+              <li id="lista3"> <a id="enlace3" href="ipv6.html">IPv6</a></li>
+              <li id="lista4"> <a id="enlace4" href="controlprotocol.html">Control Protocol/Internet Protocol</a></li>
+              <li id="lista5"> <a id="enlace5" href="conmutacionympls.html">Label and MPLS switching</a></li>
+              <li id="lista6"> <a id="enlace6" href="protocolodeenrutamiento.html">Enhanced Interior Gateway Routing Protocol</a></li>
+              <li id="lista7"> <a id="enlace7" href="puertaenlaceexterior.html">BGP: the Exterior Gateway routing protocol</a></li>
+              <li id="lista8"> <a id="enlace8" href="multidifusionip.html">IP multicast</a></li>
+              <li id="lista9"> <a id="enlace9" href="ipmovil.html">Mobile IP</a></li>
+            
+          </ul>
+
+        </aside>
+      </div>
+    </div>
+    <footer >
+      <p> &copy; Desarrollado por Juan Camilo García </p>
+    </footer>
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  </body>
+</html>

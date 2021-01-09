@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Internet Network Layer</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script>
+      window.onload=function(){
+        let res=document.getElementById("enlace3");
+        let li=document.getElementById("lista3");
+        res.style.background="white";
+        res.style.color="black";
+        li.style.background="white";
+      }
+    </script>
+    <header>
+      
+          <img src="https://www.eltiempo.com/uploads/2017/03/31/58de8912899ef.jpeg" alt="cerebro">
+      
+          <h1>Internet Network Layer</h1>
+    </header>
+    <div class="container">
+      <div class="row justify-content-between">
+        <article class="col-12 col-md-8">
+          <h4>IPv6</h4>
+          <img class="image"src="img/ipv6.jpg" alt="ipv4">
+          <p>IPv6 is an upgrade to the IPv4 protocol, designed to solve the problem of address exhaustion. 
+              Its development began in December 1998 when Steve Deering and Robert Hinden, employees of Cisco 
+              and Nokia published a formal specification of the protocol through an RFC1 and its implementation
+               continues.Designed by Steve Deering of Xerox PARC IPv6 is intended to replace IPv4, whose limit
+               on the number of allowable network addresses is beginning to restrict the growth of the Internet 
+               and its use, especially in China, India, and other densely populated Asian countries. 
+               The new standard seeks to improve the service globally; for example, providing future phone cells 
+               and mobile devices with their own permanent addresses.
+           </p>
+           <h3>Changes and new features</h3>
+           <p>In many respects, IPv6 is a conservative extension of IPv4, keeping the most used functions, 
+               others that are not so important or little used have been eliminated or made optional, in addition 
+               new features have been added. Most transport protocols - and applications - need little or no change 
+               to operate over IPv6; the exceptions are application protocols that integrate network layer addresses,
+               such as FTP or NTP.IPv6 specifies a new packet format, designed to minimize packet header processing. 
+               Because the headers of IPv4 and IPv6 packets are significantly different, the two protocols are not 
+               interoperable. <br>
+               Some of the most relevant changes from IPv4 to IPv6 are: <br>
+               <ol>
+                   <li>Extended addressing capability</li>
+                   <li>State-Free Address Autoconfiguration (SLAAC)</li>
+                   <li>Multicast</li>
+                   <li>Mandatory Network Level Security</li>
+                   <li>Simplified processing on routers</li>
+                   <li>Mobility</li>
+                   <li>Improved support for extensions and options</li>
+                   
+               </ol>
+           </p>
+
+           <h3>IPv6 addressing</h3>
+           <p>The biggest change from IPv4 to IPv6 is the length of the network addresses. IPv6 addresses, 
+               defined in RFC 2373 and RFC 2374 but was redefined in April 2003 in RFC 3513, are 128 bits; 
+               this corresponds to 32 hexadecimal digits, which are typically used to enter IPv6 addresses, 
+               as described in the next section.The number of possible IPv6 addresses is 2128 ≈ 3.4 x 1038. 
+               This number can also be represented as 1632, with 32 hexadecimal digits, each of which can take 
+               16 values
+            </p>
+             <img src="img/direccionamientoipv6.png" alt="adress">
+             <h3>IPv6 (advantages and disadvantages)</h3>
+             <p> <em>Advantage:</em>
+                To measure the number of IP addresses that IPV6 can provide, it is enough to say that this protocol 
+                can assign a quantity close to 670 billion addresses for each square millimeter of the earth's 
+                surface, thereby allowing each person to assign it a unique IP to each of your devices. Another 
+                advantage of using IPV6 is its security levels, since it includes within its specifications 
+                information encryption processes and the verification of the authenticity of its origin; 
+                IPV6 allows the use of Jumbograms (larger data packets, up to 64 bits). <br>
+              <em>Disadvantages:</em>
+              The need to extend permanent support requires an IPv4 address or some kind of NAT network address 
+              translation on the gateway routers. On the other hand at the architectural level, IPv6 addresses are 
+              more difficult to memorize. Most networks are IPv4, so the full implementation of IPv6 would be very 
+              expensive and would take a long time, meanwhile, the implementation of the transition mechanisms for 
+              the interaction of the 2 networks is required. 
+            </p>
+               <h3>IPv6 adaptation</h3>
+               <p>
+                Although IPv6 was created with the need to increase the number of addresses, since IPv4 addresses 
+                were starting to run out, it is not adapting very well. From the beginning his adaptation was not 
+                at the rate that was expected and desired. If it is true that there have been periods of time that 
+                his adaptation grew exponentially, but these periods were short-lived and he slowed down rapidly.
+                Many providers, companies and users do not finish taking the step to IPv6 and remain in IPv4, due 
+                to the incompatibility between the two. Other causes of the absence of IPv6 is the reuse of IPv4 
+                addresses, certain addresses that are not used are being sold to companies and organizations that 
+                need them. Due to this, their adaptation has slowed down a lot and may never be completed.
+               </p>
+               <iframe width="100%" height="315" style="margin-left:5px;" src="https://www.youtube.com/embed/EULzJtd5a6U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+              
+        </article>
+        <aside class="col-12 col-md-3">
+          <h3>Themes</h3>
+          <ul>
+            <li id="lista1"> <a id="enlace1" href="index.html">IPv4</a></li>
+              <li id="lista2"> <a id="enlace2" href="ipadress.html"> IP adress</a></li>
+              <li id="lista3"> <a id="enlace3" href="ipv6.html">IPv6</a></li>
+              <li id="lista4"> <a id="enlace4" href="controlprotocol.html">Control Protocol/Internet Protocol</a></li>
+              <li id="lista5"> <a id="enlace5" href="conmutacionympls.html">Label and MPLS switching</a></li>
+              <li id="lista6"> <a id="enlace6" href="protocolodeenrutamiento.html">Enhanced Interior Gateway Routing Protocol</a></li>
+              <li id="lista7"> <a id="enlace7" href="puertaenlaceexterior.html">BGP: the Exterior Gateway routing protocol</a></li>
+              <li id="lista8"> <a id="enlace8" href="multidifusionip.html">IP multicast</a></li>
+              <li id="lista9"> <a id="enlace9" href="ipmovil.html">Mobile IP</a></li>
+          </ul>
+
+        </aside>
+      </div>
+    </div>
+    <footer >
+      <p> &copy; Desarrollado por Juan Camilo García </p>
+    </footer>
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  </body>
+</html>

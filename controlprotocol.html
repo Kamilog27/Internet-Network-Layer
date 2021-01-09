@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Internet Network Layer</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script>
+      window.onload=function(){
+        let res=document.getElementById("enlace4");
+        let li=document.getElementById("lista4");
+        res.style.background="white";
+        res.style.color="black";
+        li.style.background="white";
+      }
+    </script>
+    <header>
+      
+          <img src="https://www.eltiempo.com/uploads/2017/03/31/58de8912899ef.jpeg" alt="cerebro">
+          <h1>Internet Network Layer</h1>
+    
+    </header>
+    <div class="container">
+      <div class="row justify-content-between">
+        <article class="col-12 col-md-8">
+          <h4>Control Protocol/Internet Protocol</h4>
+          <img class="image" style="height:400px;" src="img/protocol.png" alt="ipv4">
+          <p>When systems communicate with each other, there are certain standards or protocols that allow them 
+              to transmit and receive data in an orderly manner. One of the most commonly used protocol suites 
+              around the world is TCP / IP (Transmission Control Protocol / Internet Protocol). (However, much 
+              of Europe uses the X.25 protocol.) Some common functions for using TCP / IP are e-mail, system-to-system 
+              file transfer, and remote login.
+            The mail user command, Message Handling (MH) user commands, and the sendmail server command can use TCP / IP to send and receive mail between systems, and Basic Network Utilities (BNUs) can use TCP / IP to send and receive files and commands between systems.
+           </p>
+           <h3>TCP/IP</h3>
+           <p>TCP / IP enables communications between multiple systems (called hosts) connected on a network. 
+               In turn, each network can be connected to another to communicate with the main systems of that 
+               network. Although there are many types of network technologies, many of which use packet-switched 
+               and streaming transport, TCP / IP offers one important advantage: hardware independence.
+            Since Internet protocols define the unit of transmission and specify how to send it, TCP / IP can hide the details of network hardware, allowing many types of network technologies to connect and exchange information. Internet addresses make it possible for all machines on the network to communicate with each other. TCP / IP also provides standards for many of the communication services that users need.
+           </p>
+
+           <h3>Components</h3>
+           <p>
+            Sometimes it is called the TCP / IP protocol suite, in reference to the two most important protocols 
+            that make it up, which were among the first to be defined, and which are the two most used of the 
+            family: <br>
+            TCP: transmission control protocol. <br>
+            IP: internet protocol. <br>
+            There are so many protocols in this set that there are more than a hundred different ones, among them are: <br>
+            <ol>
+                <li>ARP: address resolution protocol, to find the physical address (MAC) corresponding to a certain IP.</li>
+                <li>FTP: file transfer protocol, popular in file transfer.</li>
+                <li>HTTP - Hypertext transfer protocol, which is popular because it is used to access web pages.</li>
+                <li>POP: post office protocol, for email.</li>
+                <li>SMTP: Simple Mail Transfer Protocol for e-mail.</li>
+                <li>Telnet (Telecommunication Network), to access remote computers.</li>
+                <li>IDENTD: (Identification Daemon)</li>
+                <li>IRC: (Internet Relay Chat)</li>
+                <li>UDP: (User Datagram Protocol) User Datagram Protocol</li>
+                <li>ICMP: (Internet Control Message Protocol)</li>
+                <li>TFTP (Trivial FTP) Trivial FTP</li>
+                <li>DHCP: (Dynamic Host Configuration Protocol) Dynamic Host Configuration Protocol</li>
+                <li>NTP: (Network Time Protocol) Network Time Protocol</li>
+                <li>DNS: (Domain Name Service) Domain Name Service</li>
+                <li>SNMP: (Simple Network Management Protocol)</li>
+                <li>RIP: (Routing Information Protocol)</li>
+                <li>PPP: (Point to Point Protocol)</li>
+            </ol>
+            <img src="img/ositcpip.png" alt="tcp-ip">
+            </p>
+             
+             <h3>History</h3>
+             <p> 
+                It was first developed and demonstrated in 1972 by the United States Department of Defense, 
+                running on the ARPANET, a wide-area network of that department.The Internet protocol family can 
+                be described by analogy with the OSI (Open System Interconnection) model, which describes the 
+                levels or layers of the protocol stack, although in practice it does not exactly correspond to 
+                the Internet model. In a protocol stack, each layer solves a series of tasks related to data 
+                transmission, and provides a well-defined service at the highest levels. The higher levels are 
+                closest to the user and deal with more abstract data, leaving the lower levels the task of translating 
+                the data so that it is physically manipulable.
+                The Internet model was designed as the solution to a practical engineering problem. The OSI model, 
+                on the other hand, was proposed as a theoretical approach and also as a first phase in the evolution 
+                of computer networks. Therefore, the OSI model is easier to understand, but the TCP / IP model is the 
+                one that is actually used. It helps to understand OSI before you know TCP / IP, as the same principles 
+                apply, but are easier to understand in OSI.
+            </p>
+               <h3>Advantages and disadvantages</h3>
+               <p>
+                The TCP / IP suite is designed to route and has a very high degree of reliability, 
+                suitable for networks of any size. It is used globally on all types of networks, from 
+                home to business networks and on the Internet. It is compatible with standard tools for 
+                analyzing network performance.One drawback of TCP / IP is that it is more difficult to configure and maintain than NetBEUI or IPX / SPX; furthermore, it is somewhat slower on networks with low medium traffic volume. However, it can be faster on high-traffic networks where a large number of frames have to be routed.
+               </p>
+               <iframe width="100%" height="400" src="https://www.youtube.com/embed/1pB2kan_AFk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              
+        </article>
+        <aside class="col-12 col-md-3">
+          <h3>Themes</h3>
+          <ul>
+            <li id="lista1"> <a id="enlace1" href="index.html">IPv4</a></li>
+            <li id="lista2"> <a id="enlace2" href="ipadress.html"> IP adress</a></li>
+            <li id="lista3"> <a id="enlace3" href="ipv6.html">IPv6</a></li>
+            <li id="lista4"> <a id="enlace4" href="controlprotocol.html">Control Protocol/Internet Protocol</a></li>
+            <li id="lista5"> <a id="enlace5" href="conmutacionympls.html">Label and MPLS switching</a></li>
+            <li id="lista6"> <a id="enlace6" href="protocolodeenrutamiento.html">Enhanced Interior Gateway Routing Protocol</a></li>
+            <li id="lista7"> <a id="enlace7" href="puertaenlaceexterior.html">BGP: the Exterior Gateway routing protocol</a></li>
+            <li id="lista8"> <a id="enlace8" href="multidifusionip.html">IP multicast</a></li>
+            <li id="lista9"> <a id="enlace9" href="ipmovil.html">Mobile IP</a></li>
+          </ul>
+
+        </aside>
+      </div>
+    </div>
+    <footer >
+      <p> &copy; Desarrollado por Juan Camilo García </p>
+    </footer>
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  </body>
+</html>

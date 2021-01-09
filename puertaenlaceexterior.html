@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Internet Network Layer</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script>
+      window.onload=function(){
+        let res=document.getElementById("enlace7");
+        let li=document.getElementById("lista7");
+        res.style.background="white";
+        res.style.color="black";
+        li.style.background="white";
+      }
+    </script>
+    <header>     
+      
+          <img src="https://www.eltiempo.com/uploads/2017/03/31/58de8912899ef.jpeg" alt="cerebro">
+          <h1>Internet Network Layer</h1>
+      </header>
+    <div class="container">
+      <div class="row justify-content-between">
+        <article class="col-12 col-md-8">
+          <h4>Border Gateway Protocol</h4>
+          <img class="image" style="height:400px;" src="img/bgp.jpg" alt="ospf">
+          <p>It is a protocol by which routing information is exchanged between autonomous systems. 
+              For example, service providers registered on the Internet are usually made up of 
+              several autonomous systems and for this case a protocol such as BGP is necessary.
+              Between the autonomous systems of the ISPs their route tables are exchanged through 
+              the BGP protocol. This exchange of routing information is done between the external 
+              routers of each autonomous system, which must be compatible with BGP. It is the most 
+              widely used protocol for networks with the intention of configuring an Exterior 
+              Gateway Protocol.The way to configure and delimit the information that 
+              the BGP protocol contains and exchanges is by creating what is known as 
+              an autonomous system or AS. Each will have internal connections or sessions 
+              (iBGP), as well as external sessions (eBGP).
+           </p>
+           <h3>Introduction</h3>
+           <p>
+            BGP plays a critical role in communications on the Internet. It facilitates 
+            the exchange of information on IP networks and communication between autonomous 
+            systems (AS). Therefore, BGP is an inter-domain (between autonomous systems) 
+            and intra-domain (within the same autonomous system) protocol.The BGP protocol 
+            is used to exchange information by establishing a communication session between 
+            the border routers of autonomous systems. To achieve a reliable delivery of the
+            information, use is made of a TCP-based communication session on port number 179. This session must be kept active because both ends of the communication periodically exchange and update information. At the beginning, each router sends all its routing information to the neighbor and then only new routes, updates or elimination of previously transmitted routes will be sent. In addition, messages are periodically sent to guarantee connectivity.
+            
+        </p>
+
+           <h3>Relations between AS</h3>
+           <p>
+            The relationships that exist between different autonomous systems are
+             mainly voluntary interconnection (peering) and transit. Basically, a 
+             transit relationship is one that exists between a provider and a customer, 
+             so that the customer pays for the Internet resources that the provider can 
+             provide. Peering relationships are usually not paid and consist of a link to 
+             communicate two autonomous systems in order to reduce costs, latency, packet 
+             loss and obtain redundant paths. Peering is often done with autonomous systems 
+             that are potentially similar in size. Therefore, no peering is done with a 
+             potential client since one of the two autonomous systems would benefit.
+        </p>
+             
+             <h3>Message types</h3>
+             <p> There are four types of BGP messages which are as follows:
+                <ol>                  
+                    <li>OPEN: used to establish a BGP session once the TCP connection has been established. Certain parameters that characterize that session are usually negotiated. For example, it is very possible that the members of the session do not have the same version of BGP so it is important to indicate the version number in this message.</li>
+                    <li>UPDATE: it is an update message, very important in BGP operations as it contains announcements of new prefixes. Update messages will be generated each time a new best route is determined for a certain destination or there is a modification on an existing one.</li>
+                    <li>KEEPALIVE: once the BGP session is active, a message is sent periodically to keep the connection alive or KEEPALIVE to confirm that the other end is still active in the BGP session. A maximum wait time is generally agreed upon during the initial exchange of OPEN messages. The KEEPALIVE is usually about once every third of the standby time, but not more than once every second. KEEPALIVE messages should not be generated if the timeout is zero, since in that case it is understood that the session is completely reliable.</li>
+                    <li>NOTIFICATION: it is sent when closing a BGP session and this happens when an error occurs that requires it to be closed. So it is a message that allows you to report nothing.</li>
+                </ol>
+            </p>
+               <h3>Package format</h3>
+               <p> BGP packets have a 19-byte header, consisting of the following fields:    
+                   <ol>
+                       <li>A 16-byte Marker field: to detect loss of synchronization or authentication of incoming BGP messages,</li>
+                       <li>A 2-byte field of Packet Length (Length): which specifies the length of the BGP message in bytes (the length cannot be less than 19 bytes of the header without data or greater than 4096), and</li>
+                       <li>A 1-byte field of Type: that indicates the type of message.
+                        The data following the packet header can be 0 to 4,077 bytes, to give a maximum possible length of 4,096.</li>
+                   </ol>
+
+               </p>
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/KQegXba42ok" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+               
+        </article>
+        <aside class="col-12 col-md-3">
+          <h3>Themes</h3>
+          <ul>
+            <li id="lista1"> <a id="enlace1" href="index.html">IPv4</a></li>
+            <li id="lista2"> <a id="enlace2" href="ipadress.html"> IP adress</a></li>
+            <li id="lista3"> <a id="enlace3" href="ipv6.html">IPv6</a></li>
+            <li id="lista4"> <a id="enlace4" href="controlprotocol.html">Control Protocol/Internet Protocol</a></li>
+            <li id="lista5"> <a id="enlace5" href="conmutacionympls.html">Label and MPLS switching</a></li>
+            <li id="lista6"> <a id="enlace6" href="protocolodeenrutamiento.html">Enhanced Interior Gateway Routing Protocol</a></li>
+            <li id="lista7"> <a id="enlace7" href="puertaenlaceexterior.html">BGP: the Exterior Gateway routing protocol</a></li>
+            <li id="lista8"> <a id="enlace8" href="multidifusionip.html">IP multicast</a></li>
+            <li id="lista9"> <a id="enlace9" href="ipmovil.html">Mobile IP</a></li>
+          </ul>
+
+        </aside>
+      </div>
+    </div>
+    <footer >
+      <p> &copy; Desarrollado por Juan Camilo García </p>
+    </footer>
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  </body>
+</html>
